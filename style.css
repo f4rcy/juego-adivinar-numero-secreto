@@ -2,30 +2,50 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
+    color: #fff0f5; /* color rosado claro para texto */
 }
 
 body {
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    background: linear-gradient(#f9c7d9 0%, #f7a5c4 33.33%, #f49ec6 66.67%, #ef8dbb 100%);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-
+/* Fondo de símbolos */
 body::before {
-    background-image: url("img/code.png");
-    background-repeat: no-repeat;
-    background-position: right;
     content: "";
-    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    background-image: url("img/simb.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    opacity: 1; /* Puedes ajustar si quieres que sea más tenue */
+    z-index: 0;
 }
 
+/* Fondo del contenedor con transparencia */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/fondo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Ajusta transparencia del fondo */
+    z-index: 0;
+    border-radius: 24px;
+}
+
+/* Contenedor principal encima de los fondos */
 .container {
     width: 1200px;
     height: 600px;
@@ -33,14 +53,15 @@ body::before {
     align-items: center;
     justify-content: space-between;
     border-radius: 24px;
-    border: 1px solid #1875E8;
-    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
-    background-image: url("img/Ruido.png");
-    background-size: 100% 100%;
+    border: 1px solid #f5a4c7; /* borde rosa pastel */
+    box-shadow: 4px 4px 20px 0px rgba(200, 100, 150, 0.2);
     position: relative;
+    z-index: 1;
+    background-color: transparent;
+    overflow: hidden;
 }
 
-
+/* Contenido inferior del contenedor */
 .container__contenido {
     display: flex;
     align-items: center;
@@ -48,14 +69,16 @@ body::before {
     bottom: 0;
 }
 
+/* Sección de texto */
 .container__informaciones {
     flex: 1;
     padding: 3rem;
 }
 
+/* Botón rosado */
 .container__boton {
     border-radius: 16px;
-    background: #1875E8;
+    background: #ff52ab; /* rosa malva */
     padding: 16px 24px;
     width: 100%;
     font-size: 24px;
@@ -65,41 +88,46 @@ body::before {
 }
 
 .container__boton:disabled {
-    background: #898989;
+    background: #913764; /* rosa grisáceo suave */
 }
 
+/* Texto */
 .container__texto {
     margin: 16px 0 16px 0;
 }
 
 .container__texto-azul {
-    color: #1875E8;
+    color: #f4808b; /* rosa más fuerte */
 }
 
+/* Input */
 .container__input {
     width: 100%;
     height: 72px;
     border-radius: 16px;
-    background-color: #FFF;
+    background-color: #fff0f5;
     border: none;
-    color: #1875E8;
+    color: #c94c7b;
     padding: 2rem;
     font-size: 24px;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
 
+/* Botones juntos */
 .container__botones {
     display: flex;
     gap: 2em;
 }
 
+/* Títulos */
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 72px;
     padding-bottom: 3rem;
 }
 
+/* Texto y botones */
 p,
 button {
     font-family: 'Inter', sans-serif;
